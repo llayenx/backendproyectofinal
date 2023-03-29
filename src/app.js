@@ -31,6 +31,9 @@ app.get("/", (req, res)=>{
 })
 
 app.use(userRoutes)
+app.use((error,req,res,next)=>{
+    res.status(400).json(error)
+})
 
 app.listen(PORT, ()=>{
     console.log("Servidor corriendo el puerto 8000")
