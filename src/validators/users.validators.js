@@ -36,7 +36,9 @@ const createUserValidator = [
       .exists()
       .withMessage("No se encuentra la propriedad avatar")
       .notEmpty()
-      .withMessage("el avatar no puede ser un string vacio"),
+      .withMessage("el avatar no puede ser un string vacio")
+      .isLength({ min: 7 })
+      .withMessage("El avatar debe tener una longitud minima de 7"),
        (req, res, next) => {
       validateResults(req, res, next);
     },

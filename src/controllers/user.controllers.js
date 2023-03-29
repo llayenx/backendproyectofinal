@@ -1,5 +1,6 @@
 const userServices= require("../services/user.services")
 
+
 const createUser = async(req,res,next) =>{
     try {
         const newUser = req.body

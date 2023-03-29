@@ -4,6 +4,7 @@ const initModels = require("./models/initModels")
 const cors = require("cors")
 const morgan = require ("morgan")
 const userRoutes = require("./routes/user.routes")
+const errorHandlerRoute = require("./routes/errorHandler.routes")
 
 const PORT = 8000
 
@@ -31,9 +32,9 @@ app.get("/", (req, res)=>{
 })
 
 app.use(userRoutes)
-app.use((error,req,res,next)=>{
-    res.status(400).json(error)
-})
+
+
+errorHandlerRoute(app)
 
 app.listen(PORT, ()=>{
     console.log("Servidor corriendo el puerto 8000")
