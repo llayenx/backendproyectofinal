@@ -24,6 +24,8 @@ const initModels = () =>{
     Product.hasMany(ProductInOrder, {foreignKey:"productId"})
     ProductInOrder.belongsTo(Product, {foreignKey:"productId"})
 
+    
+
 
 
 
