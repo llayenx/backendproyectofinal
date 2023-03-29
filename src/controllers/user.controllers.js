@@ -23,7 +23,19 @@ const updateUser =async(req,res, next) =>{
     res.status(400).json(error)
   }
 }
+
+const getAllUsers = async(req,res, next) =>{
+  try {
+    const allUsers = await userServices.getAll()
+    res.json(allUsers)
+    
+  } catch (error) {
+    next(error)
+    
+  }
+}
 module.exports = {
     createUser,
-    updateUser
+    updateUser,
+    getAllUsers
 }
