@@ -23,7 +23,7 @@ const userLogin = async(req, res, next) =>{
           }
           const{id, username, avatar} = user
          const token = AuthServices.genToken({id, username, avatar})
-          res.json ({id, username, email, avatar, token})
+          res.json ({id, username, email, avatar,token})
           //token
     } catch (error) {
            next (error)
