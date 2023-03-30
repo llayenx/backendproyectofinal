@@ -7,6 +7,7 @@ const userRoutes = require("./routes/user.routes")
 const authRoutes = require("./routes/auth.routes")
 const errorHandlerRoute = require("./routes/errorHandler.routes")
 const transporter = require("./utils/mailer")
+const productRoutes = require("./routes/product.routes")
 const PORT = 8000
 
 
@@ -35,6 +36,7 @@ app.get("/", (req, res)=>{
 
 app.use(userRoutes)
 app.use(authRoutes)
+app.use(productRoutes)
 
 
 errorHandlerRoute(app)
