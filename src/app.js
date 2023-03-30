@@ -6,8 +6,9 @@ const morgan = require ("morgan")
 const userRoutes = require("./routes/user.routes")
 const authRoutes = require("./routes/auth.routes")
 const errorHandlerRoute = require("./routes/errorHandler.routes")
-
+const transporter = require("./utils/mailer")
 const PORT = 8000
+
 
 initModels()
 

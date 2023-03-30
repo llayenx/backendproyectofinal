@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken")
 
   const authenticate = (req, res, next) =>{
     const token = req.headers["access-token"]
-    //console.log(token)
+
     if(!token){
         return next({
             status: 401,
@@ -12,7 +12,6 @@ const jwt = require("jsonwebtoken")
     }
     try {
         const decoded = jwt.verify(token,  "LayenxLaventure", { algoritms:"HS512"})
-       // console.log(decoded)
         req.user = decoded
         next()
     } catch (error) {
