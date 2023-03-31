@@ -9,10 +9,10 @@ const ProductInOrder = db.define("produtsInOrders", {
         primaryKey: true,
         type: DataTypes.INTEGER
       },
-      cartId: {
+      orderId: {
         type: DataTypes.INTEGER,
         allowNull:false,
-        field: "cart_id",
+        field: "order_id",
         
       },
       productId: {

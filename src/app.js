@@ -11,7 +11,7 @@ const productRoutes = require("./routes/product.routes")
 const orderRoutes = require ("./routes/order.routes")
 const cartRoutes = require ("./routes/cart.routes")
 const productInCart = require("./routes/productInCart.routes")
-
+const ProductInOrder = require("./routes/productInOrder.routes")
 const PORT = 8000
 
 
@@ -28,7 +28,7 @@ db.authenticate()
 })
 .catch((error)=> console.log(error))
 
-db.sync({alter:true})
+db.sync({force:true})
 .then(()=> console.log("base de datos syncronizada"))
 .catch((error) => console.log(error))
 
@@ -44,6 +44,7 @@ app.use(productRoutes)
 app.use(orderRoutes)
 app.use(cartRoutes)
 app.use(productInCart)
+app.use(ProductInOrder)
 
 
 errorHandlerRoute(app)
