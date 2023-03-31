@@ -17,6 +17,11 @@ const Order = db.define("orders",{
         allowNull:false,
         field: "user_Id"
       }, 
+      status:{
+        type: DataTypes.STRING,
+        allowNull:false,
+        
+      },
     }
 )
 
