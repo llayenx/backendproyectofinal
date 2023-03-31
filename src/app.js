@@ -10,6 +10,7 @@ const transporter = require("./utils/mailer")
 const productRoutes = require("./routes/product.routes")
 const orderRoutes = require ("./routes/order.routes")
 const cartRoutes = require ("./routes/cart.routes")
+const productInCart = require("./routes/productInCart.routes")
 
 const PORT = 8000
 
@@ -42,6 +43,7 @@ app.use(authRoutes)
 app.use(productRoutes)
 app.use(orderRoutes)
 app.use(cartRoutes)
+app.use(productInCart)
 
 
 errorHandlerRoute(app)
