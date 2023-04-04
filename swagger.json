@@ -1,0 +1,52 @@
+{
+    "openapi" : "3.0.0",
+    "info" :{ 
+        "title": "Ecommerce API",
+        "description":" Una API para crear una pagina de Ecommerce usando usuarios, productos, ordenes, carritos, productos en la orden y productos en los carritos ",
+        "version": "1.0.0"
+},
+"paths":{
+    "/api/v1/users":{
+        "post":{
+            "tags":["users"],
+        "summary": "Endpoint para crear usuario",
+        "description" : "Utilizando este endpoint podrás crear un nuevo usuario para la pagina de un ecommerce",
+        "requestBody":{
+            "description" : " los campos para crear un nuevo usuario son: username, email, password, avatar ",
+            "required": true,
+            "content" :{
+                "application/json": {
+                    "schema":{"$ref": "#/components/schemas/login"}
+                }
+                
+                  
+            }
+        }
+        }
+    }
+
+},
+"components":{
+    "schemas":{
+        "login":{
+            "description": "La contraseña debe tener al menos 7 ",
+            "type":"object",
+            "properties":{
+                "username":{
+                    "type":"string",
+                    "example":"lay30"
+                },
+                "email":{
+                    "type":"string",
+                    "example" : "lay30@gmail.com"
+                },
+                "password":{
+                    "type": "string",
+                    "example": "76545"
+                }
+            }
+        }
+    }
+
+}
+}

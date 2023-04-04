@@ -3,6 +3,8 @@ const db = require("./utils/database")
 const initModels = require("./models/initModels")
 const cors = require("cors")
 const morgan = require ("morgan")
+const swaggerUi = require("swagger-ui-express") 
+const swaggerDoc = require("../swagger.json")
 const userRoutes = require("./routes/user.routes")
 const authRoutes = require("./routes/auth.routes")
 const errorHandlerRoute = require("./routes/errorHandler.routes")
@@ -37,6 +39,8 @@ db.sync({alter:true})
 app.get("/", (req, res)=>{
     res.send("hello World")
 })
+
+app.use("/api/v1/docs", swaggerUi.serve, swaggerUi.setup(swaggerDoc))
 
 app.use(userRoutes)
 app.use(authRoutes)

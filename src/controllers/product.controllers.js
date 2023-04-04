@@ -47,5 +47,5 @@ module.exports = {
     createProduct,
     getAllProducts,
     updateProduct,
-    getProductOfUser
+   
 }
