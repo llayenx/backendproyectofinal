@@ -42,23 +42,24 @@ class productServices{
             throw error
         }
 }
-/* static async getOneProductsUser(id){
-    try {
-        const result =await Product.findByPk(id,{
-            attributes:["userId"],
-            include:[{
-                model:ProductInCart,
-                attributes:["productId, cartId"]
 
-            }]
+static async getProductUser(id) {
+    try {
+
+        const userProducts = await User.findByPk(id, {
+            attributes: ["username"],
+            include: {
+                model: Product,
+                attributes: ["name"]
+
+            }
         })
-        return result
-        
+        return userProducts
     } catch (error) {
-        throw error
-        
+       throw error
     }
-} */
+}
+
 }
 
 module.exports = productServices
