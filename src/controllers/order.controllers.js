@@ -1,3 +1,4 @@
+
 const orderServices = require("../services/order.services")
 
 
@@ -22,7 +23,19 @@ const getAllOrders = async(req,res, next) =>{
     }
   }
 
+  const getOrdersUser = async(req, res, next) => {
+   try {
+    const{id}= req.params
+    const result = await orderServices.getOneOrder(id)
+    res.status(200).json(result)
+    
+  } catch (error) {
+    next(error)
+   }
+  }
+
 module.exports={
     createOrder,
-    getAllOrders
+    getAllOrders,
+    getOrdersUser
 }
