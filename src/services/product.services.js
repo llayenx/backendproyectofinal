@@ -1,3 +1,4 @@
+const ProductInCart = require("../models/productInCarts.models")
 const Product = require("../models/products.models")
 const User = require("../models/users.models")
 
@@ -41,6 +42,23 @@ class productServices{
             throw error
         }
 }
+/* static async getOneProductsUser(id){
+    try {
+        const result =await Product.findByPk(id,{
+            attributes:["userId"],
+            include:[{
+                model:ProductInCart,
+                attributes:["productId, cartId"]
+
+            }]
+        })
+        return result
+        
+    } catch (error) {
+        throw error
+        
+    }
+} */
 }
 
 module.exports = productServices
