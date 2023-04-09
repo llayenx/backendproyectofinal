@@ -61,7 +61,34 @@
                         }
                     }
                 }
-            }
+            },
+
+
+
+            "get":{
+                "tags": ["users"],
+                "summary": "Consulta los usuarios creados",
+                "description": "Este endpoint de tipo GET devuelve la información de todos los usuarios.",
+                "parameters": [
+                    {
+                      "name": "access-token",
+                      "in": "header",
+                      "required": true,
+                      "description": "El acces token es obligatorio",
+                      "type":"string"
+                    }
+                  ],
+               
+                "responses": {
+                  "200":{
+                    "description": "Encontrados"
+                  },
+                  "404":{
+                    "description": "Not Found:  Hubo un error , no se encontraron los usuarios"
+                  }
+                }
+        
+              }
         },
         "/api/v1/users/{id}": {
             "put": {
@@ -94,7 +121,15 @@
                     }
                 }
             }
+        
+
+        
+        
         },
+          
+
+
+
         "/api/v1/products": {
             "post": {
                 "tags": [
