@@ -182,7 +182,23 @@
                         }
                     }
                 }
-            }
+            },
+
+            "get":{
+                "tags": ["products"],
+                "summary": "Consulta los productos creados",
+                "description": "Este endpoint de tipo GET devuelve la información de todos los productos.",
+              
+                "responses": {
+                  "200":{
+                    "description": "Encontrados"
+                  },
+                  "404":{
+                    "description": "No Found:  Hubo un error , no se encontraron los productos"
+                  }
+                }
+        
+              }
         },
         "/api/v1/products/{id}": {
             "put": {
@@ -216,7 +232,7 @@
                 }
             }
         },
-        "/api/v1/productInOrder": {
+        "/api/v1/productsinorders": {
             "post": {
                 "tags": [
                     "productsInOrder"
@@ -268,9 +284,25 @@
                         }
                     }
                 }
-            }
+            },
+
+            "get":{
+                "tags": ["productsInOrder"],
+                "summary": "Consulta los productos en la orden",
+                "description": "Este endpoint de tipo GET devuelve la información de todos los productos en la orden.",
+              
+                "responses": {
+                  "200":{
+                    "description": "Encontrados"
+                  },
+                  "404":{
+                    "description": "No Found:  Hubo un error , no se encontraron los productos in la orden"
+                  }
+                }
+        
+              }
         },
-        "/api/v1/productInCart": {
+        "/api/v1/productsincarts": {
             "post": {
                 "tags": [
                     "productsInCart"
@@ -322,7 +354,23 @@
                         }
                     }
                 }
-            }
+            },
+
+            "get":{
+                "tags": ["productsInCart"],
+                "summary": "Consulta los productos en el carrito",
+                "description": "Este endpoint de tipo GET devuelve la información de todos los productos en el carrito.",
+              
+                "responses": {
+                  "200":{
+                    "description": "Encontrados"
+                  },
+                  "404":{
+                    "description": "No Found:  Hubo un error , no se encontraron los productos en el carrito"
+                  }
+                }
+        
+              }
         },
         "/api/v1/orders": {
             "post": {
@@ -376,9 +424,25 @@
                         }
                     }
                 }
-            }
+            },
+
+            "get":{
+                "tags": ["orders"],
+                "summary": "Consulta las ordenes",
+                "description": "Este endpoint de tipo GET devuelve la información de todos las ordenes.",
+              
+                "responses": {
+                  "200":{
+                    "description": "Encontrados"
+                  },
+                  "404":{
+                    "description": "No Found:  Hubo un error , no se encontraron las ordenes"
+                  }
+                }
+        
+              }
         },
-        "/api/v1/cart": {
+        "/api/v1/carts": {
             "post": {
                 "tags": [
                     "cart"
@@ -430,7 +494,23 @@
                         }
                     }
                 }
-            }
+            },
+
+            "get":{
+                "tags": ["cart"],
+                "summary": "Consulta los carritos",
+                "description": "Este endpoint de tipo GET devuelve la información de todos los carritos.",
+              
+                "responses": {
+                  "200":{
+                    "description": "Encontrados"
+                  },
+                  "404":{
+                    "description": "No Found:  Hubo un error , no se encontraron los carritos"
+                  }
+                }
+        
+              }
         }
     },
     "components": {
