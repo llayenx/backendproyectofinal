@@ -41,7 +41,7 @@ db.sync({alter:true})
 
 
 app.get("/", (req, res)=>{
-    res.send("hello World")
+    res.send("Welcome to my e-commerce =====> https://backendproyectofinal-api.onrender.com/api/v1/docs/ ")
 })
 
 app.use("/api/v1/docs", swaggerUi.serve, swaggerUi.setup(swaggerDoc))
