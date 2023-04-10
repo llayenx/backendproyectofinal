@@ -3,6 +3,7 @@ const db = require("./utils/database")
 const initModels = require("./models/initModels")
 const cors = require("cors")
 const morgan = require ("morgan")
+require("dotenv").config()
 const swaggerUi = require("swagger-ui-express") 
 const swaggerDoc = require("../swagger.json")
 const userRoutes = require("./routes/user.routes")
@@ -14,7 +15,10 @@ const orderRoutes = require ("./routes/order.routes")
 const cartRoutes = require ("./routes/cart.routes")
 const productInCart = require("./routes/productInCart.routes")
 const ProductInOrder = require("./routes/productInOrder.routes")
-const PORT = 8000
+const { eventNames } = require("./utils/mailer")
+
+
+const PORT = process.env.PORT || 8000
 
 
 initModels()
